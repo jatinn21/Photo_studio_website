@@ -4,36 +4,23 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
 body {
   height: 100vh;
   width: 100%;
+  background-color: rgb(0, 0, 0);
 }
 
-.photo-container {
-  /* height: inherit; */
-  margin: 10px auto;
-  background-color: rgb(20, 19, 19);
-  columns: 7;
-  /* column-gap: 0.4rem; */
-  overflow: hidden;
-}
-
-.photo-container .box {
+.grid {
+  position: relative;
   width: 100%;
-  margin-bottom: 10px;
-  break-inside: avoid;
 }
 
-.photo-container .box img {
+.grid-item {
+  position: relative;
+  height: auto;
+}
+img {
+  height: 100%;
   max-width: 100%;
-  object-fit: cover;
-  border-radius: 0.2rem;
+  position: relative;
 }
