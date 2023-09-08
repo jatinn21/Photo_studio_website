@@ -3,12 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PhotoStudio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
   <body>
+    <section class="studio_name_container">
+      <div class="studio_text_container">
+        <p class="photographer__Name">Jatin Sharma</p>
+        <p class="photo__style">Portraits</p>
+      </div>
+    </section>
+    <section class="hidden__menu">
+      <div class="top_menu">
+        <div class="studio_menu_container">
+          <p class="photographer__Name">Jatin Sharma</p>
+          <p class="photo_menu_style">
+            photographer
+            <span class="material-symbols-outlined"> monochrome_photos </span>
+          </p>
+        </div>
+        <div class="cross">✗</div>
+      </div>
+      <div class="bottom_menu">
+        <section class="section--1 column">
+          <h3 class="columnTitle">News</h3>
+          <div class="rows">
+            <span>All</span>
+            <span>Publication</span>
+            <span>exhibition</span>
+            <span>edition</span>
+            <span>movies</span>
+          </div>
+        </section>
+        <section class="section--2 column">
+          <h3 class="columnTitle">Celebrity</h3>
+          <div class="rows">
+            <span id="i">Portraits</span>
+            <span>Automation</span>
+            <span>Fish Love</span>
+            <span>Mulholland Cannes</span>
+            <span>Gravure de sport</span>
+          </div>
+        </section>
+        <section class="section--3 column">
+          <h3 class="columnTitle">Work</h3>
+          <div class="rows">
+            <span>O DIA SEGUINTE - TRIBOS IMAGINÁRIAS URBANAS </span>
+            <span>O DIA SEGUINTE - TRIBOS IMAGINÁRIAS DO CEARÁ</span>
+            <span>GROUND ZERO </span>
+            <span>UNSUNG HEROES </span>
+            <span>Black eyes</span>
+            <span>Lamb</span>
+            <span>Sumo</span>
+            <span>Sadhu</span>
+            <span>kanak</span>
+            <span>low tide</span>
+            <span>cosplay</span>
+            <span>mid road</span>
+            <span>Blast</span>
+            <span>eden</span>
+            <span>DES FRANÇAIS </span>
+          </div>
+        </section>
+        <section class="section--4 column">
+          <h3 class="columnTitle">Contact</h3>
+          <div class="rows">
+            <span>contact</span>
+            <span>Instagram</span>
+          </div>
+        </section>
+      </div>
+    </section>
     <div class="grid">
       <div class="grid-item">
         <img
@@ -393,10 +464,12 @@
     </div>
   </body>
   <script>
+    // Masonry.js
     var elem = document.querySelector(".grid");
     var msnry = new Masonry(elem, {
       itemSelector: ".grid-item",
       columnWidth: 5.5,
     });
   </script>
+  <script src="script.js"></script>
 </html>

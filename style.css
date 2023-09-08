@@ -9,6 +9,18 @@ body {
   width: 100%;
   background-color: rgb(0, 0, 0);
 }
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: studioText;
+  src: url("./asset/Bricks-Regular.ttf");
+}
+@font-face {
+  font-family: rouveFont;
+  src: url("./asset/Akzidenz\ Grotesk\ Roman\ Bold.ttf");
+}
 
 .grid {
   position: relative;
@@ -23,4 +35,233 @@ img {
   height: 100%;
   max-width: 100%;
   position: relative;
+  transition: all 2s ease;
+}
+
+/* Studio_text_container */
+.studio_name_container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.studio_text_container {
+  z-index: 1 !important;
+  height: max-content;
+  width: max-content;
+  font-family: studioText;
+  position: fixed;
+  width: max-content;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  transition: all 0.9s !important;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 1 !important;
+}
+
+.photographer__Name {
+  border-bottom: 1px solid white;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+.photo__style {
+  padding: 0.5rem 0;
+  font-size: 2rem;
+}
+
+.studio_text_container:hover {
+  backdrop-filter: contrast(70%) sepia(0%);
+  /* background-color: #0000009c; */
+}
+
+/* menu Container */
+.hidden__menu {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: showMenu;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  background-color: #000000;
+  transition: all 2.1s;
+  backdrop-filter: blur(0.9em);
+  opacity: 0.7;
+  display: none;
+  position: fixed;
+}
+
+@keyframes showMenu {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  100% {
+    height: 100vh;
+    width: 100%;
+  }
+}
+
+.top_menu {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.photo_menu_style {
+  height: max-content;
+  width: 80%;
+  font-size: 2rem;
+  display: flex;
+  width: max-content;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 1rem;
+}
+.material-symbols-outlined {
+  transform: translateY(-5%);
+  font-size: 2rem !important;
+}
+
+.showingMenu {
+  animation-name: showingMenu;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
+  transition: all 1s;
+}
+
+@keyframes showmingMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.studio_menu_container {
+  font-family: studioText;
+  position: fixed;
+  width: max-content;
+  text-align: center;
+  font-size: 3rem;
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  color: white;
+  padding: 1rem;
+}
+
+.studio_menu_container:hover {
+  backdrop-filter: contrast(60%);
+  cursor: default;
+}
+
+.cross {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  font-size: 3rem;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  border: 1.5px solid white;
+  transition: all 0.5s;
+}
+
+.cross:hover {
+  background-color: white;
+  color: black;
+}
+
+.bottom_menu {
+  height: 60%;
+  width: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-around;
+  color: rgb(255, 255, 255);
+  font-family: rouveFont;
+  /* font-weight: 900; */
+  margin-top: 1rem;
+}
+
+.column,
+.rows {
+  width: max-content;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: large;
+}
+
+.column {
+  opacity: 0;
+  transition: all 2s;
+}
+
+.columnTitle {
+  text-transform: uppercase;
+  padding: 1rem 0;
+  border-bottom: 1px solid grey;
+}
+
+.rows {
+  /* font-weight: 100; */
+  font-weight: inherit;
+  height: auto;
+  width: max-content;
+  position: relative;
+}
+
+.rows span {
+  width: max-content;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: grey;
+  font-family: sans-serif;
+  font-weight: 100 !important;
+}
+
+.rows span:hover {
+  color: white !important;
+}
+
+.rows span::before {
+  content: "•";
+  content: icon;
+  position: absolute;
+  transform: translateX(-1.5rem);
+  display: none;
+  /* font-family: rouveFont; */
+  color: white !important;
+}
+
+.rows span:hover::before {
+  display: block;
 }
