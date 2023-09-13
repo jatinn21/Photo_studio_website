@@ -49,9 +49,6 @@ img {
 }
 
 .studio_text_container {
-  z-index: 1 !important;
-  height: max-content;
-  width: max-content;
   font-family: studioText;
   position: fixed;
   width: max-content;
@@ -64,8 +61,9 @@ img {
   place-items: center;
   border-radius: 1rem;
   cursor: pointer;
+  justify-content: center;
   text-transform: uppercase;
-  position: absolute;
+  /* position: absolute; */
   z-index: 1 !important;
 }
 
@@ -170,6 +168,8 @@ img {
   text-transform: uppercase;
   color: white;
   padding: 1rem;
+  overflow: hidden;
+  /* margin-bottom: 2rem; */
 }
 
 .studio_menu_container:hover {
@@ -206,8 +206,7 @@ img {
   justify-content: space-around;
   color: rgb(255, 255, 255);
   font-family: rouveFont;
-  /* font-weight: 900; */
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .column,
@@ -237,19 +236,20 @@ img {
   height: auto;
   width: max-content;
   position: relative;
+  color: rgb(255, 255, 255) !important;
 }
 
 .rows span {
   width: max-content;
   cursor: pointer;
+  color: inherit;
   text-transform: uppercase;
-  color: grey;
   font-family: sans-serif;
   font-weight: 100 !important;
 }
 
 .rows span:hover {
-  color: white !important;
+  color: rgb(214, 204, 204);
 }
 
 .rows span::before {
@@ -258,10 +258,288 @@ img {
   position: absolute;
   transform: translateX(-1.5rem);
   display: none;
-  /* font-family: rouveFont; */
-  color: white !important;
 }
 
 .rows span:hover::before {
   display: block;
+}
+
+.studio_menu_container {
+  animation-name: adminShow;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  position: relative;
+}
+
+.rotate {
+  width: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all 2s, opacity 0.8s;
+}
+
+.rotateReverse {
+  height: max-content;
+  width: 100%;
+  position: absolute;
+  transition: all 2s, opacity 0.8s;
+  transform: translate(-50%, -50%);
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+}
+
+.studio_menu_container:hover .rotateReverse {
+  transform: rotateY(360deg);
+  transform-origin: top;
+  opacity: 1;
+}
+
+.passcode {
+  height: max-content;
+  width: 100%;
+  transition: all 0.8s;
+}
+
+.passcode span {
+  height: max-content;
+  width: max-content;
+  text-align: center;
+  /* background-color: rebeccapurple; */
+  /* font-size: 2rem !important; */
+}
+
+.passcode span:hover {
+  cursor: pointer;
+  color: red;
+  transform: scale(1.5);
+}
+
+.studio_menu_container:hover .rotate {
+  transform-origin: top;
+  opacity: 0;
+  backface-visibility: visible;
+  z-index: -1;
+  transform: rotateY(180deg);
+}
+
+/* .column {
+  display: none;
+} */
+
+.passcodeForm {
+  height: 40rem;
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  display: none;
+  transition: all 1s;
+}
+
+.passcodeForm__Top {
+  height: 20%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.passcode_label {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.passcodeForm__Bottom {
+  height: 80%;
+  width: 30%;
+}
+.codeFilled {
+  height: inherit;
+  width: max-content;
+  display: flex;
+  gap: 1.5rem;
+}
+.code {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.numbers {
+  height: max-content;
+  width: 24.5rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  height: 7.5rem;
+  width: 7.5rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: grid;
+  font-size: 2rem;
+  transition: all 1s;
+  place-content: center;
+}
+
+.number0 {
+  height: 7.5rem;
+  width: 7.5rem;
+  border: 1px solid white;
+  grid-row-start: 4;
+  grid-column-end: 3;
+}
+
+.number11 {
+  grid-row-start: 4;
+  grid-column-end: 4;
+}
+
+.number11 {
+  transition: all 0.5s;
+}
+
+.number:hover {
+  cursor: pointer;
+  background-color: rgb(239, 234, 234);
+  color: black;
+}
+
+/* media query */
+@media (max-width: 322px) {
+  .photographer__Name,
+  .photo__style,
+  .photo_menu_style {
+    font-size: 1.4rem !important;
+  }
+  .cross {
+    font-size: 1.8rem;
+    padding: 0.25rem;
+  }
+  .hidden__menu .bottom_menu {
+    height: max-content;
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .bottom_menu h3 {
+    font-size: 1.1rem !important;
+    /* color: red; */
+    position: relative;
+  }
+  .bottom_menu h3::after {
+    font-size: 1.1rem !important;
+    content: "+";
+    position: absolute;
+  }
+  .rows {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2rem;
+    font-size: 1rem !important;
+    display: none;
+    max-height: 30vh;
+    max-width: 70vw;
+    overflow: scroll;
+  }
+  div.rows span {
+    width: 100%;
+  }
+}
+
+@media (min-width: 322px) and (max-width: 800px) {
+  .photographer__Name,
+  .photo__style,
+  .photo_menu_style {
+    font-size: 1.6rem !important;
+  }
+  .cross {
+    font-size: 2.2rem;
+    padding: 0.4rem;
+  }
+  .hidden__menu .bottom_menu {
+    height: max-content;
+    flex-direction: column;
+    gap: 0rem;
+    margin-top: 5rem;
+  }
+  .bottom_menu h3 {
+    font-size: 1.2rem !important;
+    color: rgb(255, 255, 255);
+    position: relative;
+  }
+  .bottom_menu h3::after {
+    font-size: 1.1rem !important;
+
+    content: "+";
+    position: absolute;
+  }
+  .rows {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2rem;
+    font-size: 1rem !important;
+    display: none;
+    max-height: 30vh;
+    width: 30vh;
+    max-width: 70vw;
+    overflow: scroll;
+  }
+  div.rows span {
+    width: 100%;
+  }
+}
+
+@media (min-width: 800px) {
+  .photographer__Name,
+  .photo__style,
+  .photo_menu_style {
+    font-size: 3rem !important;
+  }
+  .cross {
+    font-size: 3rem;
+    padding: 0.25rem;
+  }
+  .bottom_menu h3 {
+    font-size: 1.4rem !important;
+    /* color: red; */
+    position: relative;
+    text-align: center;
+  }
+
+  .rows {
+    margin: 1rem;
+    padding: 0;
+    margin-bottom: 2rem;
+    font-size: 1.2rem !important;
+    max-height: 80vh;
+    height: max-content;
+
+    max-width: 30vw;
+    display: flex;
+    justify-content: center;
+    /* overflow: scroll; */
+  }
+
+  .rows span:hover {
+    /* color: rgb(224, 226, 255) !important; */
+    text-decoration: underline;
+  }
+
+  div.rows span {
+    width: 100%;
+  }
 }

@@ -12,6 +12,10 @@
   />
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
   <body>
     <section class="studio_name_container">
       <div class="studio_text_container">
@@ -22,18 +26,24 @@
     <section class="hidden__menu">
       <div class="top_menu">
         <div class="studio_menu_container">
-          <p class="photographer__Name">Jatin Sharma</p>
-          <p class="photo_menu_style">
-            photographer
-            <span class="material-symbols-outlined"> monochrome_photos </span>
-          </p>
+          <div class="rotate">
+            <p class="photographer__Name">Jatin Sharma</p>
+            <p class="photo_menu_style">
+              photographer
+              <span class="material-symbols-outlined"> monochrome_photos </span>
+            </p>
+          </div>
+          <div class="rotateReverse">
+            <p class="photographer__Name">Admin Login</p>
+            <p class="passcode"><span>Passcode</span></p>
+          </div>
         </div>
         <div class="cross">✗</div>
       </div>
       <div class="bottom_menu">
         <section class="section--1 column">
-          <h3 class="columnTitle">News</h3>
-          <div class="rows">
+          <h3 class="columnTitle columnTitle1">News</h3>
+          <div class="rows row1">
             <span>All</span>
             <span>Publication</span>
             <span>exhibition</span>
@@ -42,8 +52,8 @@
           </div>
         </section>
         <section class="section--2 column">
-          <h3 class="columnTitle">Celebrity</h3>
-          <div class="rows">
+          <h3 class="columnTitle columnTitle2">Celebrity</h3>
+          <div class="rows row2">
             <span id="i">Portraits</span>
             <span>Automation</span>
             <span>Fish Love</span>
@@ -52,8 +62,8 @@
           </div>
         </section>
         <section class="section--3 column">
-          <h3 class="columnTitle">Work</h3>
-          <div class="rows">
+          <h3 class="columnTitle columnTitle3">Work</h3>
+          <div class="rows row3">
             <span>O DIA SEGUINTE - TRIBOS IMAGINÁRIAS URBANAS </span>
             <span>O DIA SEGUINTE - TRIBOS IMAGINÁRIAS DO CEARÁ</span>
             <span>GROUND ZERO </span>
@@ -72,10 +82,42 @@
           </div>
         </section>
         <section class="section--4 column">
-          <h3 class="columnTitle">Contact</h3>
-          <div class="rows">
+          <h3 class="columnTitle columnTitle4">Contact</h3>
+          <div class="rows row4">
             <span>contact</span>
             <span>Instagram</span>
+          </div>
+        </section>
+        <section class="passcodeForm">
+          <div class="passcodeForm__Top">
+            <label class="passcode_label">Enter Passcode</label>
+            <p class="codeFilled">
+              <span class="code1 code"></span>
+              <span class="code2 code"></span>
+              <span class="code3 code"></span>
+              <span class="code4 code"></span>
+              <span class="code5 code"></span>
+            </p>
+          </div>
+          <div class="passcodeForm__Bottom">
+            <p class="numbers">
+              <span class="number1 number">1</span>
+              <span class="number2 number">2</span>
+              <span class="number3 number">3</span>
+              <span class="number4 number">4</span>
+              <span class="number5 number">5</span>
+              <span class="number6 number">6</span>
+              <span class="number7 number">7</span>
+              <span class="number8 number">8</span>
+              <span class="number8 number">9</span>
+              <span class="number9 number"
+                ><i class="fa fa-times" aria-hidden="true"></i
+              ></span>
+              <span class="number0 number">0</span>
+              <span class="number11 number" id="exitPasscode">
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i
+              ></span>
+            </p>
           </div>
         </section>
       </div>
