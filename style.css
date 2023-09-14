@@ -169,7 +169,6 @@ img {
   color: white;
   padding: 1rem;
   overflow: hidden;
-  /* margin-bottom: 2rem; */
 }
 
 .studio_menu_container:hover {
@@ -231,7 +230,6 @@ img {
 }
 
 .rows {
-  /* font-weight: 100; */
   font-weight: inherit;
   height: auto;
   width: max-content;
@@ -307,8 +305,6 @@ img {
   height: max-content;
   width: max-content;
   text-align: center;
-  /* background-color: rebeccapurple; */
-  /* font-size: 2rem !important; */
 }
 
 .passcode span:hover {
@@ -325,15 +321,11 @@ img {
   transform: rotateY(180deg);
 }
 
-/* .column {
-  display: none;
-} */
-
 .passcodeForm {
   height: 40rem;
   width: 100%;
   display: flex;
-  gap: 3rem;
+  gap: 10%;
   flex-direction: column;
   align-items: center;
   margin-top: 3rem;
@@ -356,8 +348,10 @@ img {
 }
 
 .passcodeForm__Bottom {
-  height: 80%;
-  width: 30%;
+  height: max-content;
+  width: max-content;
+  display: flex;
+  justify-content: center;
 }
 .codeFilled {
   height: inherit;
@@ -366,16 +360,15 @@ img {
   gap: 1.5rem;
 }
 .code {
-  height: 2.5rem;
-  width: 2.5rem;
-  background-color: white;
+  height: 2.5vmin;
+  width: 2.5vmin;
+  background-color: black;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .numbers {
   height: max-content;
-  width: 24.5rem;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -385,20 +378,25 @@ img {
   align-items: center;
 }
 
-.number {
-  height: 7.5rem;
-  width: 7.5rem;
+.number,
+.number11,
+.delete {
+  height: 10.5vmin;
+  width: 10.5vmin;
   border-radius: 50%;
   border: 1px solid white;
   display: grid;
+  padding: 1rem;
   font-size: 2rem;
   transition: all 1s;
   place-content: center;
+  cursor: pointer;
 }
 
 .number0 {
-  height: 7.5rem;
-  width: 7.5rem;
+  height: 10.5vmin;
+  width: 10.5vmin;
+  padding: 1rem;
   border: 1px solid white;
   grid-row-start: 4;
   grid-column-end: 3;
@@ -413,8 +411,9 @@ img {
   transition: all 0.5s;
 }
 
-.number:hover {
-  cursor: pointer;
+.number:hover,
+.number11:hover,
+.delete:hover {
   background-color: rgb(239, 234, 234);
   color: black;
 }
